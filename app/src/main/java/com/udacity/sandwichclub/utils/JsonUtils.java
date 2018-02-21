@@ -20,9 +20,9 @@ public class JsonUtils {
 
             Sandwich sandwich = new Sandwich();
 
-            sandwich.setMainName(sandwichJSON.getJSONObject(context.getResources().getString(R.string.json_field_name)).getString(context.getResources().getString(R.string.json_field_main_name)));
+            sandwich.setMainName(sandwichJSON.optJSONObject(context.getResources().getString(R.string.json_field_name)).getString(context.getResources().getString(R.string.json_field_main_name)));
 
-            JSONArray alsoKnownArray = sandwichJSON.getJSONObject(context.getResources().getString(R.string.json_field_name)).getJSONArray(context.getResources().getString(R.string.json_field_also_known_as));
+            JSONArray alsoKnownArray = sandwichJSON.optJSONObject(context.getResources().getString(R.string.json_field_name)).optJSONArray(context.getResources().getString(R.string.json_field_also_known_as));
 
             List<String> alsoKnownList = new ArrayList<>();
             for (int i = 0; i < alsoKnownArray.length(); i++) {
@@ -30,11 +30,11 @@ public class JsonUtils {
             }
             sandwich.setAlsoKnownAs(alsoKnownList);
 
-            sandwich.setPlaceOfOrigin(sandwichJSON.getString(context.getResources().getString(R.string.json_field_place_of_origin)));
-            sandwich.setDescription(sandwichJSON.getString(context.getResources().getString(R.string.json_field_description)));
-            sandwich.setImage(sandwichJSON.getString(context.getResources().getString(R.string.json_field_image)));
+            sandwich.setPlaceOfOrigin(sandwichJSON.optString(context.getResources().getString(R.string.json_field_place_of_origin)));
+            sandwich.setDescription(sandwichJSON.optString(context.getResources().getString(R.string.json_field_description)));
+            sandwich.setImage(sandwichJSON.optString(context.getResources().getString(R.string.json_field_image)));
 
-            JSONArray ingredientsArray = sandwichJSON.getJSONArray(context.getResources().getString(R.string.json_field_ingredients));
+            JSONArray ingredientsArray = sandwichJSON.optJSONArray(context.getResources().getString(R.string.json_field_ingredients));
             List<String> ingredientsList = new ArrayList<>();
 
             for (int i = 0; i < ingredientsArray.length(); i++) {

@@ -1,5 +1,7 @@
 package com.udacity.sandwichclub.model;
 
+import android.text.TextUtils;
+
 import java.util.List;
 
 public class Sandwich {
@@ -35,12 +37,7 @@ public class Sandwich {
     }
 
     public String getAlsoKnownAs() {
-        String nameToReturn = "";
-        for (String name : alsoKnownAs) {
-            nameToReturn = nameToReturn.concat(name + "\n");
-        }
-
-        return nameToReturn;
+        return TextUtils.join("\n", alsoKnownAs);
     }
 
     public void setAlsoKnownAs(List<String> alsoKnownAs) {
@@ -72,13 +69,7 @@ public class Sandwich {
     }
 
     public String getIngredients() {
-
-        String ingredientsToReturn = "";
-        for (String ingredient : ingredients) {
-            ingredientsToReturn = ingredientsToReturn.concat(ingredient + "\n");
-        }
-
-        return ingredientsToReturn;
+        return TextUtils.join("\n", ingredients);
     }
 
     public void setIngredients(List<String> ingredients) {

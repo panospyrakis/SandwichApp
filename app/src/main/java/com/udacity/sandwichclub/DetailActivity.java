@@ -11,15 +11,25 @@ import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
+import butterknife.BindView;
+
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
-    private TextView originTv;
-    private TextView alsoKnownTv;
-    private TextView ingredientsTv;
-    private TextView descriptionTv;
+    @BindView(R.id.origin_tv)
+    TextView originTv;
+
+    @BindView(R.id.also_known_tv)
+    TextView alsoKnownTv;
+
+    @BindView(R.id.ingredients_tv)
+    TextView ingredientsTv;
+
+    @BindView(R.id.description_tv)
+    TextView descriptionTv;
+
     private Sandwich sandwich;
 
 
