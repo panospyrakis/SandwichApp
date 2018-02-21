@@ -34,8 +34,13 @@ public class Sandwich {
         this.mainName = mainName;
     }
 
-    public List<String> getAlsoKnownAs() {
-        return alsoKnownAs;
+    public String getAlsoKnownAs() {
+        String nameToReturn = "";
+        for (String name : alsoKnownAs) {
+            nameToReturn = nameToReturn.concat(name + "\n");
+        }
+
+        return nameToReturn;
     }
 
     public void setAlsoKnownAs(List<String> alsoKnownAs) {
@@ -66,8 +71,14 @@ public class Sandwich {
         this.image = image;
     }
 
-    public List<String> getIngredients() {
-        return ingredients;
+    public String getIngredients() {
+
+        String ingredientsToReturn = "";
+        for (String ingredient : ingredients) {
+            ingredientsToReturn = ingredientsToReturn.concat(ingredient + "\n");
+        }
+
+        return ingredientsToReturn;
     }
 
     public void setIngredients(List<String> ingredients) {

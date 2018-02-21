@@ -128,4 +128,11 @@
         </item>
     </string-array>
 
+    <string name="json_field_name">name</string>
+    <string name="json_field_main_name">mainName</string>
+    <string name="json_field_also_known_as">alsoKnownAs</string>
+    <string name="json_field_place_of_origin">placeOfOrigin</string>
+    <string name="json_field_description">description</string>
+    <string name="json_field_image">image</string>
+    <string name="json_field_ingredients">ingredients</string>
 </resources>
