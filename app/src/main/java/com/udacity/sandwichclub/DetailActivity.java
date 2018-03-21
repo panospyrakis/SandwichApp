@@ -44,7 +44,7 @@ public class DetailActivity extends AppCompatActivity {
         if (intent == null) {
             closeOnError();
         }
-        bindViews();
+
         int position = intent.getIntExtra(EXTRA_POSITION, DEFAULT_POSITION);
         if (position == DEFAULT_POSITION) {
             // EXTRA_POSITION not found in intent
@@ -72,18 +72,6 @@ public class DetailActivity extends AppCompatActivity {
     private void closeOnError() {
         finish();
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
-    }
-
-    private void bindViews() {
-
-        originTv = findViewById(R.id.origin_tv);
-
-        alsoKnownTv = findViewById(R.id.also_known_tv);
-
-        ingredientsTv = findViewById(R.id.ingredients_tv);
-
-        descriptionTv = findViewById(R.id.description_tv);
-
     }
 
     private void populateUI() {
